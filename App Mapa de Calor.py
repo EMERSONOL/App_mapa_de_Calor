@@ -7,7 +7,7 @@ import pandas as pd
 import os
 
 # 1. CONFIGURAÇÃO DA PÁGINA
-st.set_page_config(page_title="Analytics Racial Pro", layout="wide")
+st.set_page_config(page_title="Analise Racial Pro", layout="wide")
 
 # Estilização para tornar os menus e botões mais modernos
 st.markdown("""
@@ -140,4 +140,5 @@ else:
     col1, col2, col3 = st.columns([1, 1, 1])
 
     with col2:
+
         st.image("https://img.icons8.com/clouds/200/map-marker.png", width=200)
