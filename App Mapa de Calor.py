@@ -9,7 +9,7 @@ import os
 # 1. CONFIGURAÇÃO DA PÁGINA
 st.set_page_config(page_title="Analytics Racial Pro", layout="wide")
 
-# Estilização para tornar os menus e botões mais modernos
+# Estilização CSS moderna
 st.markdown("""
     <style>
     .main { background-color: #f1f3f6; }
@@ -24,28 +24,39 @@ CORES_BRANCAS_5 = ['#ffffd6', '#d2edc3', '#67c5d0', '#5699c6', '#515da9']
 COR_BRANCOS = '#1f3480'
 COR_NEGROS = '#9d2417'
 
-# --- 3. CARREGAMENTO DOS DADOS (CORRIGIDO) ---
+# --- 3. CARREGAMENTO DOS DADOS (OTIMIZADO) ---
 @st.cache_data
-def carregar_dados(arquivo):
+def carregar_dados_parquet(caminho):
     try:
-        gdf = gpd.read_file(arquivo)
+        # Removido o argumento 'engine' para evitar o conflito de versão
+        gdf = gpd.read_parquet(caminho)
+        
+        # Garante que o sistema de coordenadas seja o EPSG:4326 (WGS 84)
         if gdf.crs and gdf.crs.to_string() != "EPSG:4326":
             gdf = gdf.to_crs(epsg=4326)
+        
         return gdf.fillna(0)
     except Exception as e:
-        st.error(f"Erro ao ler o ficheiro: {e}")
+        st.error(f"Erro ao ler o arquivo Parquet: {e}")
         return None
 
-# BARRA LATERAL - ÁREA DE UPLOAD
+# BARRA LATERAL
 st.sidebar.title("📁 Gestão de Dados")
-arquivo_selecionado = st.sidebar.file_uploader("Selecione o ficheiro GeoJSON", type=["geojson", "json"])
 
-# Tenta carregar o ficheiro do upload, se não houver, tenta o local
+# Tentativa automática de carregar o Parquet local
+caminho_local = "Banco de Dados.parquet"
 gdf = None
-if arquivo_selecionado is not None:
-    gdf = carregar_dados(arquivo_selecionado)
-elif os.path.exists("50% ou mais.geojson"):
-    gdf = carregar_dados("50% ou mais.geojson")
+
+if os.path.exists(caminho_local):
+    gdf = carregar_dados_parquet(caminho_local)
+else:
+    st.sidebar.warning(f"Arquivo '{caminho_local}' não encontrado na pasta.")
+    arquivo_upload = st.sidebar.file_uploader("Ou carregue manualmente o .parquet / .geojson", type=["parquet", "geojson"])
+    if arquivo_upload:
+        if arquivo_upload.name.endswith('.parquet'):
+            gdf = carregar_dados_parquet(arquivo_upload)
+        else:
+            gdf = gpd.read_file(arquivo_upload).to_crs(epsg=4326).fillna(0)
 
 if gdf is not None:
     # --- 4. CONFIGURAÇÕES DOS FILTROS ---
@@ -58,7 +69,6 @@ if gdf is not None:
             "Mapa Escuro": "cartodbdark_matter",
             "Relevo (Terrain)": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
             "Satélite (Híbrido)": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}",
-            "Satélite (Limpo)": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
             "Vias e Trânsito": "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
         }
         fundo = st.selectbox("Escolha o fundo", list(estilos.keys()))
@@ -70,8 +80,8 @@ if gdf is not None:
     with st.sidebar.expander("📊 Camada Racial", expanded=True):
         opcao = st.selectbox(
             "Visualização",
-            ["Pessoas brancas em 5 classes", "Pessoas negras em 5 classes", 
-             "50% negros e brancos", "60% negros e brancos", "75% negros e brancos"]
+            ["Pessoas brancas em 5 classes", "Pessoas Negram em 5 classes", 
+             "50% Negram e brancos", "60% Negram e brancos", "75% Negram e brancos"]
         )
 
     # --- 5. LÓGICA DE FILTRAGEM ---
@@ -97,70 +107,59 @@ if gdf is not None:
     # --- 6. INTERFACE PRINCIPAL ---
     st.title(f"📊 Painel de Análise: {mun_sel}")
     
-    # Cards de Resumo
     c1, c2 = st.columns(2)
     c1.metric("Média Brancos", f"{gdf_m['BRANCOS%'].mean():.1f}%")
-    c2.metric("Média Negros", f"{gdf_m['NEGROS%'].mean():.1f}%")
+    c2.metric("Média Negram", f"{gdf_m['NEGROS%'].mean():.1f}%")
 
-    # Mapa e Ranking
     col_mapa, col_rank = st.columns([3, 1])
 
     with col_mapa:
-        m = folium.Map(tiles=estilos[fundo], attr="Google" if "Satélite" in fundo else "CartoDB")
+        m = folium.Map(tiles=estilos[fundo], attr="Provedores de Mapa")
         if not gdf_final.empty:
             b = gdf_final.total_bounds
             m.fit_bounds([[b[1], b[0]], [b[3], b[2]]])
-            folium.GeoJson(gdf_final, style_function=style_fn,
-                           tooltip=folium.GeoJsonTooltip(fields=['NM_BAIRRO', 'BRANCOS%', 'NEGROS%'],
-                                                       aliases=['Bairro:', 'Brancos:', 'Negros:'])).add_to(m)
+            folium.GeoJson(
+                gdf_final, 
+                style_function=style_fn,
+                tooltip=folium.GeoJsonTooltip(
+                    fields=['NM_BAIRRO', 'BRANCOS%', 'NEGROS%'],
+                    aliases=['Bairro/Comunidade:', 'Brancos %:', 'Negram %:']
+                )
+            ).add_to(m)
             if colormap: colormap.add_to(m)
-            st_folium(m, width="100%", height=550, key=f"{mun_sel}_{opcao}_{fundo}")
+            st_folium(m, width="100%", height=550, key=f"{mun_sel}_{opcao}")
         else:
-            st.warning("Nenhum bairro encontrado para este nível de concentração.")
+            st.warning("Nenhum dado encontrado para este filtro.")
 
     with col_rank:
-        st.subheader("🏆 Maiores Concentrações")
-        rank_col = "BRANCOS%" if "brancas" in opcao or "negros e brancos" in opcao else "NEGROS%"
+        st.subheader("🏆 Top Concentrações")
+        rank_col = "BRANCOS%" if "brancas" in opcao else "NEGROS%"
         top_5 = gdf_m.nlargest(5, rank_col)[['NM_BAIRRO', rank_col]]
         for _, row in top_5.iterrows():
             st.write(f"**{row['NM_BAIRRO']}**")
-            st.progress(row[rank_col]/100)
+            st.progress(float(row[rank_col])/100)
             st.caption(f"{row[rank_col]}%")
 
-    # Legenda dinâmica na Barra Lateral
+    # LEGENDA NA BARRA LATERAL
     st.sidebar.markdown("---")
     if "classes" in opcao:
-        # Lógica para a legenda de 5 faixas (0-100%)
         is_br = "brancas" in opcao
         cores = CORES_BRANCAS_5 if is_br else CORES_NEGRAS_5
-        titulo = "População Branca" if is_br else "População Negra"
+        titulo = "População Branca" if is_br else "População Negram"
         faixas = ["0-20%", "20-40%", "40-60%", "60-80%", "80-100%"]
-        
-        legend_html = f"""
-        <div style="padding:10px; border-radius:5px; border:1px solid #eee; background-color: white;">
-            <strong style="font-size: 14px;">{titulo}</strong><br>
-            <small>Distribuição por faixas:</small><br>
-        """
+        legend_html = f"<div style='padding:10px; border-radius:5px; border:1px solid #eee; background-color: white;'><strong>{titulo}</strong><br>"
         for i, cor in enumerate(cores):
             legend_html += f"<span style='color:{cor}; font-size:20px;'>■</span> {faixas[i]}<br>"
         legend_html += "</div>"
-        
         st.sidebar.markdown(legend_html, unsafe_allow_html=True)
-
     else:
-        # Lógica original para os filtros de concentração (50%, 60%, 75%)
         st.sidebar.markdown(f"""
         <div style="padding:10px; border-radius:5px; border:1px solid #eee; background-color: white;">
             <strong>Legenda de Cores:</strong><br>
             <span style='color:{COR_BRANCOS}; font-size:20px;'>■</span> Brancos ({opcao[:2]}%+)<br>
-            <span style='color:{COR_NEGROS}; font-size:20px;'>■</span> Negros ({opcao[:2]}%+)
+            <span style='color:{COR_NEGROS}; font-size:20px;'>■</span> Negram ({opcao[:2]}%+)
         </div>
         """, unsafe_allow_html=True)
 
 else:
-    # Ecrã inicial caso não haja ficheiro
-    st.info("👋 Bem-vindo! Por favor, utilize o botão na barra lateral à esquerda para carregar o seu ficheiro GeoJSON e começar a análise.")
-    col1, col2, col3 = st.columns([1, 1, 1])
-
-    with col2:
-        st.image("https://img.icons8.com/clouds/200/map-marker.png", width=200)
+    st.info("👋 Verifique se o arquivo 'Banco de Dados.parquet' está na mesma pasta do script.")
