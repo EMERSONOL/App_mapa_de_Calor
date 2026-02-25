@@ -38,14 +38,14 @@ def carregar_dados(arquivo):
 
 # BARRA LATERAL - ÁREA DE UPLOAD
 st.sidebar.title("📁 Gestão de Dados")
-arquivo_selecionado = st.sidebar.file_uploader("Selecione o ficheiro GeoJSON", type=["geojson", "json"])
+arquivo_selecionado = st.sidebar.file_uploader("Selecione o ficheiro parquet", type=["parquet", "parquet"])
 
 # Tenta carregar o ficheiro do upload, se não houver, tenta o local
 gdf = None
 if arquivo_selecionado is not None:
     gdf = carregar_dados(arquivo_selecionado)
-elif os.path.exists("50% ou mais.geojson"):
-    gdf = carregar_dados("50% ou mais.geojson")
+elif os.path.exists("Banco de Dados.parquet"):
+    gdf = carregar_dados("Banco de Dados.parquet")
 
 if gdf is not None:
     # --- 4. CONFIGURAÇÕES DOS FILTROS ---
@@ -142,3 +142,4 @@ else:
     with col2:
 
         st.image("https://img.icons8.com/clouds/200/map-marker.png", width=200)
+
