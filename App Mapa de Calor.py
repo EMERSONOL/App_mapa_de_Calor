@@ -56,7 +56,10 @@ if gdf is not None:
         estilos = {
             "Mapa Claro": "cartodbpositron",
             "Mapa Escuro": "cartodbdark_matter",
-            "Satélite": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
+            "Relevo (Terrain)": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+            "Satélite (Híbrido)": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}",
+            "Satélite (Limpo)": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+            "Vias e Trânsito": "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
         }
         fundo = st.selectbox("Escolha o fundo", list(estilos.keys()))
 
@@ -124,13 +127,33 @@ if gdf is not None:
             st.progress(row[rank_col]/100)
             st.caption(f"{row[rank_col]}%")
 
-    # Legenda para os modos de comparação
-    if "classes" not in opcao:
+    # Legenda dinâmica na Barra Lateral
+    st.sidebar.markdown("---")
+    if "classes" in opcao:
+        # Lógica para a legenda de 5 faixas (0-100%)
+        is_br = "brancas" in opcao
+        cores = CORES_BRANCAS_5 if is_br else CORES_NEGRAS_5
+        titulo = "População Branca" if is_br else "População Negra"
+        faixas = ["0-20%", "20-40%", "40-60%", "60-80%", "80-100%"]
+        
+        legend_html = f"""
+        <div style="padding:10px; border-radius:5px; border:1px solid #eee; background-color: white;">
+            <strong style="font-size: 14px;">{titulo}</strong><br>
+            <small>Distribuição por faixas:</small><br>
+        """
+        for i, cor in enumerate(cores):
+            legend_html += f"<span style='color:{cor}; font-size:20px;'>■</span> {faixas[i]}<br>"
+        legend_html += "</div>"
+        
+        st.sidebar.markdown(legend_html, unsafe_allow_html=True)
+
+    else:
+        # Lógica original para os filtros de concentração (50%, 60%, 75%)
         st.sidebar.markdown(f"""
-        <div style="padding:10px; border-radius:5px; border:1px solid #eee;">
+        <div style="padding:10px; border-radius:5px; border:1px solid #eee; background-color: white;">
             <strong>Legenda de Cores:</strong><br>
-            <span style='color:{COR_BRANCOS}'>■</span> Brancos ({opcao[:2]}%+)<br>
-            <span style='color:{COR_NEGROS}'>■</span> Negros ({opcao[:2]}%+)
+            <span style='color:{COR_BRANCOS}; font-size:20px;'>■</span> Brancos ({opcao[:2]}%+)<br>
+            <span style='color:{COR_NEGROS}; font-size:20px;'>■</span> Negros ({opcao[:2]}%+)
         </div>
         """, unsafe_allow_html=True)
 
