@@ -51,7 +51,7 @@
 ## 📂 Estrutura do Projeto
 
 * `App Mapa de Calor.py`: Código-fonte principal da aplicação.
-* `Banco de Dados.geojson`: Base de dados padrão (opcional).
+* `Banco de Dados.parquet`: Base de dados padrão (opcional).
 * `README.md`: Documentação do sistema.
 
 ---
