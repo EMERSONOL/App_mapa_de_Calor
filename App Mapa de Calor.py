@@ -28,13 +28,9 @@ COR_NEGROS = '#9d2417'
 @st.cache_data
 def carregar_dados_parquet(caminho):
     try:
-        # Removido o argumento 'engine' para evitar o conflito de versão
         gdf = gpd.read_parquet(caminho)
-        
-        # Garante que o sistema de coordenadas seja o EPSG:4326 (WGS 84)
         if gdf.crs and gdf.crs.to_string() != "EPSG:4326":
             gdf = gdf.to_crs(epsg=4326)
-        
         return gdf.fillna(0)
     except Exception as e:
         st.error(f"Erro ao ler o arquivo Parquet: {e}")
@@ -43,15 +39,14 @@ def carregar_dados_parquet(caminho):
 # BARRA LATERAL
 st.sidebar.title("📁 Gestão de Dados")
 
-# Tentativa automática de carregar o Parquet local
 caminho_local = "Banco de Dados.parquet"
 gdf = None
 
 if os.path.exists(caminho_local):
     gdf = carregar_dados_parquet(caminho_local)
 else:
-    st.sidebar.warning(f"Arquivo '{caminho_local}' não encontrado na pasta.")
-    arquivo_upload = st.sidebar.file_uploader("Ou carregue manualmente o .parquet / .geojson", type=["parquet", "geojson"])
+    st.sidebar.warning(f"Arquivo '{caminho_local}' não encontrado.")
+    arquivo_upload = st.sidebar.file_uploader("Carregue o arquivo", type=["parquet", "geojson"])
     if arquivo_upload:
         if arquivo_upload.name.endswith('.parquet'):
             gdf = carregar_dados_parquet(arquivo_upload)
@@ -67,9 +62,7 @@ if gdf is not None:
         estilos = {
             "Mapa Claro": "cartodbpositron",
             "Mapa Escuro": "cartodbdark_matter",
-            "Relevo (Terrain)": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
-            "Satélite (Híbrido)": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}",
-            "Vias e Trânsito": "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+            "Satélite (Híbrido)": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
         }
         fundo = st.selectbox("Escolha o fundo", list(estilos.keys()))
 
@@ -78,18 +71,20 @@ if gdf is not None:
         mun_sel = st.selectbox("Município", ["Todos"] + municipios)
     
     with st.sidebar.expander("📊 Camada Racial", expanded=True):
+        # OPÇÃO 1 APLICADA: Nomes reduzidos
         opcao = st.selectbox(
             "Visualização",
-            ["Pessoas brancas em 5 classes", "Pessoas Negram em 5 classes", 
-             "50% Negram e brancos", "60% Negram e brancos", "75% Negram e brancos"]
+            ["Brancas: 5 Classes", "Negras: 5 Classes", 
+             "50% Negras/Brancos", "60% Negras/Brancos", "75% Negras/Brancos"]
         )
 
     # --- 5. LÓGICA DE FILTRAGEM ---
     gdf_m = gdf.copy() if mun_sel == "Todos" else gdf[gdf['NM_MUNICIP'] == mun_sel].copy()
     
     colormap = None
-    if "classes" in opcao:
-        is_br = "brancas" in opcao
+    # Lógica ajustada para detectar os novos nomes reduzidos
+    if "classes" in opcao.lower():
+        is_br = "brancas" in opcao.lower()
         cores = CORES_BRANCAS_5 if is_br else CORES_NEGRAS_5
         colormap = cm.StepColormap(colors=cores, vmin=0, vmax=100, index=[0,20,40,60,80,100])
         gdf_final = gdf_m.copy()
@@ -109,7 +104,7 @@ if gdf is not None:
     
     c1, c2 = st.columns(2)
     c1.metric("Média Brancos", f"{gdf_m['BRANCOS%'].mean():.1f}%")
-    c2.metric("Média Negram", f"{gdf_m['NEGROS%'].mean():.1f}%")
+    c2.metric("Média Negras", f"{gdf_m['NEGROS%'].mean():.1f}%")
 
     col_mapa, col_rank = st.columns([3, 1])
 
@@ -123,17 +118,17 @@ if gdf is not None:
                 style_function=style_fn,
                 tooltip=folium.GeoJsonTooltip(
                     fields=['NM_BAIRRO', 'BRANCOS%', 'NEGROS%'],
-                    aliases=['Bairro/Comunidade:', 'Brancos %:', 'Negram %:']
+                    aliases=['Bairro/Comunidade:', 'Brancos %:', 'Negras %:']
                 )
             ).add_to(m)
             if colormap: colormap.add_to(m)
-            st_folium(m, width="100%", height=550, key=f"{mun_sel}_{opcao}")
+            st_folium(m, width="100%", height=550, key=f"{mun_sel}_{opcao}_{fundo}")
         else:
             st.warning("Nenhum dado encontrado para este filtro.")
 
     with col_rank:
         st.subheader("🏆 Top Concentrações")
-        rank_col = "BRANCOS%" if "brancas" in opcao else "NEGROS%"
+        rank_col = "BRANCOS%" if "brancas" in opcao.lower() else "NEGROS%"
         top_5 = gdf_m.nlargest(5, rank_col)[['NM_BAIRRO', rank_col]]
         for _, row in top_5.iterrows():
             st.write(f"**{row['NM_BAIRRO']}**")
@@ -142,10 +137,10 @@ if gdf is not None:
 
     # LEGENDA NA BARRA LATERAL
     st.sidebar.markdown("---")
-    if "classes" in opcao:
-        is_br = "brancas" in opcao
+    if "classes" in opcao.lower():
+        is_br = "brancas" in opcao.lower()
         cores = CORES_BRANCAS_5 if is_br else CORES_NEGRAS_5
-        titulo = "População Branca" if is_br else "População Negram"
+        titulo = "População Branca" if is_br else "População Negras"
         faixas = ["0-20%", "20-40%", "40-60%", "60-80%", "80-100%"]
         legend_html = f"<div style='padding:10px; border-radius:5px; border:1px solid #eee; background-color: white;'><strong>{titulo}</strong><br>"
         for i, cor in enumerate(cores):
@@ -157,10 +152,9 @@ if gdf is not None:
         <div style="padding:10px; border-radius:5px; border:1px solid #eee; background-color: white;">
             <strong>Legenda de Cores:</strong><br>
             <span style='color:{COR_BRANCOS}; font-size:20px;'>■</span> Brancos ({opcao[:2]}%+)<br>
-            <span style='color:{COR_NEGROS}; font-size:20px;'>■</span> Negram ({opcao[:2]}%+)
+            <span style='color:{COR_NEGROS}; font-size:20px;'>■</span> Negras ({opcao[:2]}%+)
         </div>
         """, unsafe_allow_html=True)
 
 else:
     st.info("👋 Verifique se o arquivo 'Banco de Dados.parquet' está na mesma pasta do script.")
-
