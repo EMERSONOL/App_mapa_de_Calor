@@ -39,7 +39,7 @@ def carregar_dados_parquet(caminho):
 # BARRA LATERAL
 st.sidebar.title("📁 Gestão de Dados")
 
-caminho_local = "EMERSONOL/App_mapa_de_Calor/Banco de Dados.parquet"
+caminho_local = "Banco de Dados.parquet"
 gdf = None
 
 if os.path.exists(caminho_local):
