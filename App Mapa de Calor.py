@@ -7,7 +7,7 @@ import pandas as pd
 import os
 
 # 1. CONFIGURAÇÃO DA PÁGINA
-st.set_page_config(page_title="Analytics Racial Pro", layout="wide")
+st.set_page_config(page_title="Analise Racial Pro - Negram", layout="wide")
 
 # Estilização CSS moderna
 st.markdown("""
@@ -157,4 +157,5 @@ if gdf is not None:
         """, unsafe_allow_html=True)
 
 else:
+
     st.info("👋 Verifique se o arquivo 'Banco de Dados.parquet' está na mesma pasta do script.")
