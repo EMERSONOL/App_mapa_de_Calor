@@ -80,7 +80,7 @@ if gdf is not None:
     with st.sidebar.expander("📊 Camada Racial", expanded=True):
         opcao = st.selectbox(
             "Visualização",
-            ["Pessoas brancas em 5 classes", "Pessoas Negram em 5 classes", 
+            ["Brancas: 5 Classes", "Negram: 5 Classes", 
              "50% Negram e brancos", "60% Negram e brancos", "75% Negram e brancos"]
         )
 
@@ -163,3 +163,4 @@ if gdf is not None:
 
 else:
     st.info("👋 Verifique se o arquivo 'Banco de Dados.parquet' está na mesma pasta do script.")
+
