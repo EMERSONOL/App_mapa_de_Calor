@@ -1,4 +1,4 @@
-# 📊 Analytics Racial Pro - Negram
+# 📊 Analise Racial Pro - Negram
 
 **Analytics Racial Pro** é um ecossistema de inteligência geográfica desenvolvido em Python para mapear e analisar a distribuição demográfica em comunidades e bairros. Utilizando tecnologias de ponta como **Streamlit**, **Folium** e **Geopandas**, o painel transforma dados complexos em mapas interativos e métricas acionáveis.
 
