@@ -80,7 +80,7 @@ if gdf is not None:
     with st.sidebar.expander("📊 Camada Racial", expanded=True):
         opcao = st.selectbox(
             "Visualização",
-            ["Brancas: 5 Classes", "Negram: 5 Classes", 
+            ["Pessoas brancas em 5 classes", "Pessoas Negram em 5 classes", 
              "50% Negram e brancos", "60% Negram e brancos", "75% Negram e brancos"]
         )
 
