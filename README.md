@@ -6,7 +6,7 @@
 
 ## 🌟 Funcionalidades Principais
 
-* **Processamento Geospacial Híbrido**: Suporte para carregamento dinâmico de arquivos `.geojson`, `.json` e leitura otimizada de bases locais.
+* **Processamento Geospacial Híbrido**: Suporte para carregamento dinâmico de arquivos `.geojson` ou `.json`, `.parquet` e leitura otimizada de bases locais.
 * **Visualização Temática Avançada**:
     * **Modo Classes**: Divisão da população (Branca ou Negram) em 5 faixas de densidade (0-100%).
     * **Modo Concentração Crítica**: Filtros rápidos para identificar áreas com predominância de 50%, 60% ou 75% de um grupo específico.
