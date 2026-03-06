@@ -39,7 +39,7 @@ def carregar_dados_parquet(caminho):
 # BARRA LATERAL
 st.sidebar.title("📁 Gestão de Dados")
 
-caminho_local = "anco de Dados.parquet"
+caminho_local = "Banco de Dados.parquet"
 gdf = None
 
 if os.path.exists(caminho_local):
@@ -159,4 +159,5 @@ if gdf is not None:
 else:
 
     st.info("👋 Verifique se o arquivo 'Banco de Dados.parquet' está na mesma pasta do script.")
+
 
