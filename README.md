@@ -35,7 +35,7 @@
     ```
 
 2.  **Preparação dos dados**:
-    O sistema busca automaticamente o arquivo local `50% ou mais.geojson` ou permite o upload manual pela barra lateral. O arquivo deve conter as colunas:
+    O sistema realiza a busca automática pelo arquivo local Banco de Dados.parquet ou possibilita o upload manual através da barra lateral, aceitando os seguintes tipos de arquivo: `.geojson`, `.json` e `.parquet`. O arquivo deve conter as colunas:
     * `NM_MUNICIP`: Nome do Município.
     * `NM_BAIRRO`: Nome do Bairro/Comunidade.
     * `BRANCOS%`: Percentual de população branca.
