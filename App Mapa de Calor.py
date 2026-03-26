@@ -24,7 +24,7 @@ CORES_BRANCAS_5 = ['#ffffd6', '#d2edc3', '#67c5d0', '#5699c6', '#515da9']
 COR_BRANCOS = '#1f3480'
 COR_NEGROS = '#9d2417'
 
-# --- 3. CARREGAMENTO DOS DADOS (OTIMIZADO) ---
+# --- 3. FUNÇÕES DE DADOS (OTIMIZADAS E EM CACHE) ---
 @st.cache_data
 def carregar_dados_parquet(caminho):
     try:
@@ -35,6 +35,16 @@ def carregar_dados_parquet(caminho):
     except Exception as e:
         st.error(f"Erro ao ler o arquivo Parquet: {e}")
         return None
+
+@st.cache_data
+def gerar_contorno_municipios(_gdf, lista_municipios):
+    # Gera o contorno dos municípios selecionados sem pesar o processamento contínuo
+    if "Todos" in lista_municipios or len(lista_municipios) == 0:
+        gdf_base = _gdf
+    else:
+        gdf_base = _gdf[_gdf['NM_MUNICIP'].isin(lista_municipios)]
+    return gdf_base.dissolve(by='NM_MUNICIP').reset_index()
+
 
 # BARRA LATERAL
 st.sidebar.title("📁 Gestão de Dados")
@@ -68,10 +78,9 @@ if gdf is not None:
 
     with st.sidebar.expander("📍 Localização", expanded=True):
         municipios = sorted(gdf['NM_MUNICIP'].unique())
-        mun_sel = st.selectbox("Município", ["Todos"] + municipios)
+        mun_sel = st.multiselect("Município(s)", ["Todos"] + municipios, default=["Todos"])
     
     with st.sidebar.expander("📊 Camada Racial", expanded=True):
-        # OPÇÃO 1 APLICADA: Nomes reduzidos
         opcao = st.selectbox(
             "Visualização",
             ["Brancas: 5 Classes", "Negras: 5 Classes", 
@@ -79,10 +88,18 @@ if gdf is not None:
         )
 
     # --- 5. LÓGICA DE FILTRAGEM ---
-    gdf_m = gdf.copy() if mun_sel == "Todos" else gdf[gdf['NM_MUNICIP'] == mun_sel].copy()
+    if "Todos" in mun_sel or len(mun_sel) == 0:
+        gdf_m = gdf.copy()
+        titulo_municipio = "Todos os Municípios"
+    else:
+        gdf_m = gdf[gdf['NM_MUNICIP'].isin(mun_sel)].copy()
+        
+        if len(mun_sel) <= 3:
+            titulo_municipio = ", ".join(mun_sel)
+        else:
+            titulo_municipio = f"{len(mun_sel)} Municípios Selecionados"
     
     colormap = None
-    # Lógica ajustada para detectar os novos nomes reduzidos
     if "classes" in opcao.lower():
         is_br = "brancas" in opcao.lower()
         cores = CORES_BRANCAS_5 if is_br else CORES_NEGRAS_5
@@ -100,7 +117,7 @@ if gdf is not None:
             return {'fillColor': cor, 'color': 'none', 'weight': 0, 'fillOpacity': 0.85}
 
     # --- 6. INTERFACE PRINCIPAL ---
-    st.title(f"📊 Painel de Análise: {mun_sel}")
+    st.title(f"📊 Painel de Análise: {titulo_municipio}")
     
     c1, c2 = st.columns(2)
     c1.metric("Média Brancos", f"{gdf_m['BRANCOS%'].mean():.1f}%")
@@ -113,25 +130,57 @@ if gdf is not None:
         if not gdf_final.empty:
             b = gdf_final.total_bounds
             m.fit_bounds([[b[1], b[0]], [b[3], b[2]]])
+            
+            # --- CAMADA 1: Dados Raciais (Preenchimento e Tooltip dos Bairros) ---
             folium.GeoJson(
                 gdf_final, 
                 style_function=style_fn,
                 tooltip=folium.GeoJsonTooltip(
                     fields=['NM_BAIRRO', 'BRANCOS%', 'NEGROS%'],
-                    aliases=['Bairro/Comunidade:', 'Brancos %:', 'Negras %:']
+                    aliases=['Bairro/Comunidade:', 'Brancos %:', 'Negras %:'],
+                    style=("background-color: white; color: #333333; font-family: arial; font-size: 13px; padding: 8px; border-radius: 5px;")
                 )
             ).add_to(m)
-            if colormap: colormap.add_to(m)
-            st_folium(m, width="100%", height=550, key=f"{mun_sel}_{opcao}_{fundo}")
+            
+            # --- CAMADA 2: Contorno dos Municípios (Bordas Finas e Vazadas) ---
+            gdf_contorno = gerar_contorno_municipios(gdf, mun_sel)
+            
+            folium.GeoJson(
+                gdf_contorno,
+                style_function=lambda x: {
+                    'fill': False,              # Permite clicar e passar o mouse nos bairros abaixo
+                    'color': '#333333',         # Cor grafite
+                    'weight': 1.0,              # Linha fina
+                    'opacity': 0.5              # Semitransparente
+                },
+                name="Limites Municipais"
+            ).add_to(m)
+
+            if colormap: 
+                colormap.add_to(m)
+                
+            folium.LayerControl().add_to(m)
+
+            # Chave única garantida para evitar erros de renderização no Streamlit
+            map_key = f"mapa_{hash(tuple(mun_sel))}_{opcao}_{fundo}"
+            st_folium(m, width="100%", height=550, key=map_key)
         else:
             st.warning("Nenhum dado encontrado para este filtro.")
 
     with col_rank:
         st.subheader("🏆 Top Concentrações")
         rank_col = "BRANCOS%" if "brancas" in opcao.lower() else "NEGROS%"
-        top_5 = gdf_m.nlargest(5, rank_col)[['NM_BAIRRO', rank_col]]
+        
+        # Puxa o nome do município junto para exibir no ranking
+        top_5 = gdf_m.nlargest(5, rank_col)[['NM_BAIRRO', 'NM_MUNICIP', rank_col]]
+        
         for _, row in top_5.iterrows():
-            st.write(f"**{row['NM_BAIRRO']}**")
+            # Mostra o município ao lado do bairro se houver vários na tela
+            if "Todos" in mun_sel or len(mun_sel) > 1 or len(mun_sel) == 0:
+                st.write(f"**{row['NM_BAIRRO']}** ({row['NM_MUNICIP']})")
+            else:
+                st.write(f"**{row['NM_BAIRRO']}**")
+                
             st.progress(float(row[rank_col])/100)
             st.caption(f"{row[rank_col]}%")
 
@@ -157,9 +206,4 @@ if gdf is not None:
         """, unsafe_allow_html=True)
 
 else:
-
     st.info("👋 Verifique se o arquivo 'Banco de Dados.parquet' está na mesma pasta do script.")
-
-
-
-
