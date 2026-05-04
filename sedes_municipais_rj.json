@@ -1,0 +1,1293 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.3181, -23.0067]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Angra dos Reis",
+        "endereco": "Praça Nilo Peçanha, 186 - Centro",
+        "cidade": "Angra dos Reis",
+        "estado": "Rio de Janeiro",
+        "cep": "23900-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.1033, -21.6216]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Aperibé",
+        "endereco": "Est, Rj 116 - Km 208, S/Nº - Verdes Campos",
+        "cidade": "Aperibé",
+        "estado": "Rio de Janeiro",
+        "cep": "28495-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.3427, -22.8727]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Araruama",
+        "endereco": "Av. John Kennedy, 120 - Araruama",
+        "cidade": "Araruama",
+        "estado": "Rio de Janeiro",
+        "cep": "28970-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.1058, -22.2308]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Areal",
+        "endereco": "Praça Duque De Caxias, 39 - Centro",
+        "cidade": "Areal",
+        "estado": "Rio de Janeiro",
+        "cep": "25845-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.8816, -22.7469]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Armação dos Búzios",
+        "endereco": "Praça Santos Dumont, 111 - Centro",
+        "cidade": "Armação dos Búzios",
+        "estado": "Rio de Janeiro",
+        "cep": "28950-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.0277, -22.9658]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Arraial do Cabo",
+        "endereco": "Av. Da Liberdade, 50 - Centro",
+        "cidade": "Arraial do Cabo",
+        "estado": "Rio de Janeiro",
+        "cep": "28930-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.8274, -22.4695]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Barra do Piraí",
+        "endereco": "Rua dos Praçinhas, 47",
+        "cidade": "Barra do Piraí",
+        "estado": "Rio de Janeiro",
+        "cep": "27123-080"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.1708, -22.5444]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Barra Mansa",
+        "endereco": "Rua Luiz Ponce, 263 - Centro",
+        "cidade": "Barra Mansa",
+        "estado": "Rio de Janeiro",
+        "cep": "27321-740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.3997, -22.7644]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Belford Roxo",
+        "endereco": "Av. Floripes Rocha, 378 - Centro",
+        "cidade": "Belford Roxo",
+        "estado": "Rio de Janeiro",
+        "cep": "26113-340"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.4247, -22.1969]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Bom Jardim",
+        "endereco": "Praça Gov. Roberto Silveira, 44 - Centro",
+        "cidade": "Bom Jardim",
+        "estado": "Rio de Janeiro",
+        "cep": "28660-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.6797, -21.1333]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Bom Jesus do Itabapoana",
+        "endereco": "Av. Governador Roberto Silveira, 68 - Centro",
+        "cidade": "Bom Jesus do Itabapoana",
+        "estado": "Rio de Janeiro",
+        "cep": "28360-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.0272, -22.8808]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Cabo Frio",
+        "endereco": "Rua Florisbela Rosa Da Penha, 292 - Braga",
+        "cidade": "Cabo Frio",
+        "estado": "Rio de Janeiro",
+        "cep": "28908-050"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.6531, -22.4642]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Cachoeiras de Macacu",
+        "endereco": "Rua Oswaldo Aranha, 6 - Campo Do Prado",
+        "cidade": "Cachoeiras de Macacu",
+        "estado": "Rio de Janeiro",
+        "cep": "28680-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.9103, -21.5756]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Cambuci",
+        "endereco": "Praça Da Bandeira, 120 - Centro",
+        "cidade": "Cambuci",
+        "estado": "Rio de Janeiro",
+        "cep": "28430-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.3236, -21.7533]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Campos dos Goytacazes",
+        "endereco": "Rua Ponciano De Azevedo Furtado, 47 - Parque Santo Amaro",
+        "cidade": "Campos dos Goytacazes",
+        "estado": "Rio de Janeiro",
+        "cep": "28030-045"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.3686, -21.9772]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Cantagalo",
+        "endereco": "Praça Miguel De Carvalho, 65 - Centro",
+        "cidade": "Cantagalo",
+        "estado": "Rio de Janeiro",
+        "cep": "28500-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.6591, -22.1883]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Carapebus",
+        "endereco": "Rua Getulio Vargas, 15 - Centro",
+        "cidade": "Carapebus",
+        "estado": "Rio de Janeiro",
+        "cep": "27998-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.6116, -21.3172]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Cardoso Moreira",
+        "endereco": "Rua Sebastiao Zaquieu, 84/92 - Catarina",
+        "cidade": "Cardoso Moreira",
+        "estado": "Rio de Janeiro",
+        "cep": "28180-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.6094, -21.9336]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Carmo",
+        "endereco": "Praça Princesa Izabel, 1 - Centro",
+        "cidade": "Carmo",
+        "estado": "Rio de Janeiro",
+        "cep": "28640-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.1441, -22.4805]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Casimiro de Abreu",
+        "endereco": "Rua Padre Anchieta, 234 - Centro",
+        "cidade": "Casimiro de Abreu",
+        "estado": "Rio de Janeiro",
+        "cep": "28860-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.2083, -22.0258]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Comendador Levy Gasparian",
+        "endereco": "Est, Uniao Industria, S/Nº",
+        "cidade": "Comendador Levy Gasparian",
+        "estado": "Rio de Janeiro",
+        "cep": "25870-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.8667, -22.0833]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Conceição de Macabu",
+        "endereco": "Rua Maria Adelaide, 186 - Centro",
+        "cidade": "Conceição de Macabu",
+        "estado": "Rio de Janeiro",
+        "cep": "28740-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.3611, -22.0278]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Cordeiro",
+        "endereco": "Av. Presidente Vargas, 42/54 - Centro",
+        "cidade": "Cordeiro",
+        "estado": "Rio de Janeiro",
+        "cep": "28540-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.3216, -22.0515]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Duas Barras",
+        "endereco": "Praça Gov Portela, 07 - Centro",
+        "cidade": "Duas Barras",
+        "estado": "Rio de Janeiro",
+        "cep": "28650-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.3117, -22.7856]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Duque de Caxias",
+        "endereco": "Al, Esmeralda, 206 - Jardim Primavera",
+        "cidade": "Duque de Caxias",
+        "estado": "Rio de Janeiro",
+        "cep": "25210-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.6800, -22.5497]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Engenheiro Paulo de Frontin",
+        "endereco": "Praça Pref Roger Malharde, 75 - Centro",
+        "cidade": "Engenheiro Paulo de Frontin",
+        "estado": "Rio de Janeiro",
+        "cep": "26650-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.9808, -22.5358]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Guapimirim",
+        "endereco": "Av. Dedo De Deus, 820 - Centro",
+        "cidade": "Guapimirim",
+        "estado": "Rio de Janeiro",
+        "cep": "25940-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.1856, -22.8422]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Iguaba Grande",
+        "endereco": "Rod. Amaral Peixoto, 2495 - Centro",
+        "cidade": "Iguaba Grande",
+        "estado": "Rio de Janeiro",
+        "cep": "28960-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.8594, -22.7483]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Itaboraí",
+        "endereco": "Praça Marechal Floriano Peixoto, 97 - Centro",
+        "cidade": "Itaboraí",
+        "estado": "Rio de Janeiro",
+        "cep": "24800-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.7753, -22.8525]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Itaguaí",
+        "endereco": "Rua General Bocaiuva, 636 - Centro",
+        "cidade": "Itaguaí",
+        "estado": "Rio de Janeiro",
+        "cep": "23810-310"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.6886, -21.4319]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Italva",
+        "endereco": "Rod. Br 356, S/Nº - Primeiro",
+        "cidade": "Italva",
+        "estado": "Rio de Janeiro",
+        "cep": "28250-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.0747, -21.6744]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Itaocara",
+        "endereco": "Rua Sebastiao Da Penha Rangel, 67 - Centro",
+        "cidade": "Itaocara",
+        "estado": "Rio de Janeiro",
+        "cep": "28570-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.8905, -21.2036]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Itaperuna",
+        "endereco": "Rua Izabel Vieira Martins, 131 - Presidente Costa E Silva",
+        "cidade": "Itaperuna",
+        "estado": "Rio de Janeiro",
+        "cep": "28300-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.5630, -22.4961]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Itatiaia",
+        "endereco": "Praça Mariana Rocha Leao, 20 - Centro",
+        "cidade": "Itatiaia",
+        "estado": "Rio de Janeiro",
+        "cep": "27580-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.6644, -22.6455]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Japeri",
+        "endereco": "Est, Dos Coqueiros, 1993 - Sta Ines",
+        "cidade": "Japeri",
+        "estado": "Rio de Janeiro",
+        "cep": "26453-020"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.1280, -21.2066]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Laje do Muriaé",
+        "endereco": "Praça 1 De Marco, S/Nº - Centro",
+        "cidade": "Laje do Muriaé",
+        "estado": "Rio de Janeiro",
+        "cep": "28350-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.7865, -22.3708]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Macaé",
+        "endereco": "Av. Presidente Sodre, 534 - Centro",
+        "cidade": "Macaé",
+        "estado": "Rio de Janeiro",
+        "cep": "27910-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.2740, -21.9830]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Macuco",
+        "endereco": "Rua Dr. Mario Freire Martins, 100 - Centro",
+        "cidade": "Macuco",
+        "estado": "Rio de Janeiro",
+        "cep": "28545-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.0401, -22.6534]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Magé",
+        "endereco": "Praça Nilo Pecanha, S/Nº - Centro",
+        "cidade": "Magé",
+        "estado": "Rio de Janeiro",
+        "cep": "25900-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.0405, -22.9597]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Mangaratiba",
+        "endereco": "Praça Robert Simoes, 92 - Centro",
+        "cidade": "Mangaratiba",
+        "estado": "Rio de Janeiro",
+        "cep": "23860-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.8194, -22.9194]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Maricá",
+        "endereco": "Rua Alvares De Castro, 346 - Centro",
+        "cidade": "Maricá",
+        "estado": "Rio de Janeiro",
+        "cep": "24900-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.7317, -22.5272]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Mendes",
+        "endereco": "Av. Julio Braga, 86 - Centro",
+        "cidade": "Mendes",
+        "estado": "Rio de Janeiro",
+        "cep": "26700-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.4286, -22.7831]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Mesquita",
+        "endereco": "Rua Arthur De Oliveira Vecchi, 120 - Centro",
+        "cidade": "Mesquita",
+        "estado": "Rio de Janeiro",
+        "cep": "26553-080"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.4681, -22.4633]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Miguel Pereira",
+        "endereco": "Rua Pref Manoel G Barbosa, S/Nº - Centro",
+        "cidade": "Miguel Pereira",
+        "estado": "Rio de Janeiro",
+        "cep": "26900-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.0294, -21.4117]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Miracema",
+        "endereco": "Praça Ary Parreiras, S/Nº - Centro",
+        "cidade": "Miracema",
+        "estado": "Rio de Janeiro",
+        "cep": "28460-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.9706, -21.0422]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Natividade",
+        "endereco": "Praça Ferreira Rabello, 04 - Centro",
+        "cidade": "Natividade",
+        "estado": "Rio de Janeiro",
+        "cep": "28380-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.4146, -22.8093]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Nilópolis",
+        "endereco": "Av. Mirandela, 401 - Centro",
+        "cidade": "Nilópolis",
+        "estado": "Rio de Janeiro",
+        "cep": "26520-331"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.1182, -22.8872]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Niterói",
+        "endereco": "Rua Da Conceicao, 100 - Centro",
+        "cidade": "Niterói",
+        "estado": "Rio de Janeiro",
+        "cep": "24020-082"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.5311, -22.2811]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Nova Friburgo",
+        "endereco": "Av. Alberto Braune, 225 - Centro",
+        "cidade": "Nova Friburgo",
+        "estado": "Rio de Janeiro",
+        "cep": "28613-001"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.4504, -22.7599]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Nova Iguaçu",
+        "endereco": "Rua Dr. Athaide Pimenta De Moraes, 528 - Centro",
+        "cidade": "Nova Iguaçu",
+        "estado": "Rio de Janeiro",
+        "cep": "26215-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.7113, -22.6094]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Paracambi",
+        "endereco": "Rua Juiz Emilio Carmo, 50 - Centro",
+        "cidade": "Paracambi",
+        "estado": "Rio de Janeiro",
+        "cep": "26600-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.2925, -22.1625]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Paraíba do Sul",
+        "endereco": "Rua Visconde Da Paraiba, 11 - Centro",
+        "cidade": "Paraíba do Sul",
+        "estado": "Rio de Janeiro",
+        "cep": "25850-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.7139, -23.2178]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Parati",
+        "endereco": "Rua Alameda Princesa Isabel, S/Nº - Pontal",
+        "cidade": "Parati",
+        "estado": "Rio de Janeiro",
+        "cep": "23970-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.4247, -22.4278]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Paty do Alferes",
+        "endereco": "Rua Do Recanto, 46 - Centro",
+        "cidade": "Paty do Alferes",
+        "estado": "Rio de Janeiro",
+        "cep": "26950-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.1786, -22.5042]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Petrópolis",
+        "endereco": "Av. Koeler, 260 - Centro",
+        "cidade": "Petrópolis",
+        "estado": "Rio de Janeiro",
+        "cep": "25685-060"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.0019, -22.5150]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Pinheiral",
+        "endereco": "Rua Justino Ribeiro, 228 - Centro",
+        "cidade": "Pinheiral",
+        "estado": "Rio de Janeiro",
+        "cep": "27197-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.8977, -22.6288]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Piraí",
+        "endereco": "Praça Getulio Vargas, S/Nº - Centro",
+        "cidade": "Piraí",
+        "estado": "Rio de Janeiro",
+        "cep": "27175-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.0408, -20.9630]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Porciúncula",
+        "endereco": "Rua Cesar Vieira, 105 - Centro",
+        "cidade": "Porciúncula",
+        "estado": "Rio de Janeiro",
+        "cep": "28390-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.2883, -22.4216]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Porto Real",
+        "endereco": "Hilario Ettore, 442 - Centro",
+        "cidade": "Porto Real",
+        "estado": "Rio de Janeiro",
+        "cep": "27570-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.2580, -22.3975]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Quatis",
+        "endereco": "Rua Professora Ana Ferreira De Oliveira, 47",
+        "cidade": "Quatis",
+        "estado": "Rio de Janeiro",
+        "cep": "27410-270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.5558, -22.7161]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Queimados",
+        "endereco": "Rua Hortencia, 254 - Centro",
+        "cidade": "Queimados",
+        "estado": "Rio de Janeiro",
+        "cep": "26387-310"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.4725, -22.1039]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Quissamã",
+        "endereco": "Rua Conde De Araruama, 425 - Centro",
+        "cidade": "Quissamã",
+        "estado": "Rio de Janeiro",
+        "cep": "28735-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.4480, -22.4678]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Resende",
+        "endereco": "Rua Augusto Xavier De Lima, 251 - Jardim Jalisco",
+        "cidade": "Resende",
+        "estado": "Rio de Janeiro",
+        "cep": "27510-090"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.6258, -22.7092]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Rio Bonito",
+        "endereco": "Rua Mons Antonio De S Gens, 23 - Centro",
+        "cidade": "Rio Bonito",
+        "estado": "Rio de Janeiro",
+        "cep": "28800-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.1400, -22.7230]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Rio Claro",
+        "endereco": "Av. Joao Baptista Portugal, 230 - Centro",
+        "cidade": "Rio Claro",
+        "estado": "Rio de Janeiro",
+        "cep": "27460-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.5858, -22.1644]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Rio das Flores",
+        "endereco": "Rua Leoni Ramos, 12 - Centro",
+        "cidade": "Rio das Flores",
+        "estado": "Rio de Janeiro",
+        "cep": "27660-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.9333, -22.5269]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Rio das Ostras",
+        "endereco": "Rua Campo De Albacora, 75 - Loteamento Atlantica",
+        "cidade": "Rio das Ostras",
+        "estado": "Rio de Janeiro",
+        "cep": "28895-664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.1936, -22.9519]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Rio de Janeiro",
+        "endereco": "Rua Sao Clemente, 360 - Botafogo",
+        "cidade": "Rio de Janeiro",
+        "estado": "Rio de Janeiro",
+        "cep": "22260-006"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.9880, -21.9566]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Santa Maria Madalena",
+        "endereco": "Praça Cel. Braz, 02 - Centro",
+        "cidade": "Santa Maria Madalena",
+        "estado": "Rio de Janeiro",
+        "cep": "28770-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.1816, -21.5388]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Santo Antônio de Pádua",
+        "endereco": "Praça Visconde Figueira, 57 - Centro",
+        "cidade": "Santo Antônio de Pádua",
+        "estado": "Rio de Janeiro",
+        "cep": "28470-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.7455, -21.6461]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São Fidélis",
+        "endereco": "Praça Sao Fidelis, S/Nº - Centro",
+        "cidade": "São Fidélis",
+        "estado": "Rio de Janeiro",
+        "cep": "28400-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.1208, -21.2972]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São Francisco de Itabapoana",
+        "endereco": "Praça Dos Tres Poderes, S/Nº - Centro",
+        "cidade": "São Francisco de Itabapoana",
+        "estado": "Rio de Janeiro",
+        "cep": "28230-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.0538, -22.8269]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São Gonçalo",
+        "endereco": "Rua Feliciano Sodre, 100 - Sao Goncalo",
+        "cidade": "São Gonçalo",
+        "estado": "Rio de Janeiro",
+        "cep": "24440-440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.0516, -21.6400]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São João da Barra",
+        "endereco": "Rua Barao De Barcelos, S/Nº - Centro",
+        "cidade": "São João da Barra",
+        "estado": "Rio de Janeiro",
+        "cep": "28220-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.3558, -22.7836]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São João de Meriti",
+        "endereco": "Av. Presidente Lincoln, 899 - Vilar Dos Teles",
+        "cidade": "São João de Meriti",
+        "estado": "Rio de Janeiro",
+        "cep": "25555-200"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.9427, -21.3583]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São José de Ubá",
+        "endereco": "Rua Alibaba De Souza Lessa, S/Nº - Loteamento Nova Uba",
+        "cidade": "São José de Ubá",
+        "estado": "Rio de Janeiro",
+        "cep": "28455-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.9242, -22.1528]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São José do Vale do Rio Preto",
+        "endereco": "Rua Cel. Francisco Limongi, 159 - Centro",
+        "cidade": "São José do Vale do Rio Preto",
+        "estado": "Rio de Janeiro",
+        "cep": "25780-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.1022, -22.8394]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São Pedro da Aldeia",
+        "endereco": "Rua Marques Da Cruz, 61 - Centro",
+        "cidade": "São Pedro da Aldeia",
+        "estado": "Rio de Janeiro",
+        "cep": "28940-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.1344, -21.9567]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de São Sebastião do Alto",
+        "endereco": "Rua Julio Vieitas, 88 - Centro",
+        "cidade": "São Sebastião do Alto",
+        "estado": "Rio de Janeiro",
+        "cep": "28550-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.9150, -21.9969]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Sapucaia",
+        "endereco": "Praça Miguel Couto Filho, 240 - Centro",
+        "cidade": "Sapucaia",
+        "estado": "Rio de Janeiro",
+        "cep": "25880-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.5097, -22.9214]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Saquarema",
+        "endereco": "Rua Coronel Madureira, 77 - Centro",
+        "cidade": "Saquarema",
+        "estado": "Rio de Janeiro",
+        "cep": "28990-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.7041, -22.7483]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Seropédica",
+        "endereco": "Rua Maria Lourenco, 18 - Fazenda Caxias",
+        "cidade": "Seropédica",
+        "estado": "Rio de Janeiro",
+        "cep": "23890-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.3933, -22.6514]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Silva Jardim",
+        "endereco": "Rua Luiz Gomes, 46 - Centro",
+        "cidade": "Silva Jardim",
+        "estado": "Rio de Janeiro",
+        "cep": "28820-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.6738, -22.0494]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Sumidouro",
+        "endereco": "Rua Alfredo Chaves, 39 - Centro",
+        "cidade": "Sumidouro",
+        "estado": "Rio de Janeiro",
+        "cep": "28637-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.7144, -22.7302]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Tanguá",
+        "endereco": "Rua Vereador Manoel Macedo, 1040 - Centro",
+        "cidade": "Tanguá",
+        "estado": "Rio de Janeiro",
+        "cep": "24890-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.9669, -22.4122]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Teresópolis",
+        "endereco": "Av. Feliciano Sodre, 675 - Varzea",
+        "cidade": "Teresópolis",
+        "estado": "Rio de Janeiro",
+        "cep": "25963-025"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-42.0641, -22.0622]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Trajano de Morais",
+        "endereco": "Praça Waldemar Magalhaes, 01 - Centro",
+        "cidade": "Trajano de Morais",
+        "estado": "Rio de Janeiro",
+        "cep": "28750-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.2088, -22.1166]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Três Rios",
+        "endereco": "Praça Sao Sebastiao, 81 - Centro",
+        "cidade": "Três Rios",
+        "estado": "Rio de Janeiro",
+        "cep": "25804-080"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.7047, -22.2452]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Valença",
+        "endereco": "Rua Dr. Figueiredo, 320 - Centro",
+        "cidade": "Valença",
+        "estado": "Rio de Janeiro",
+        "cep": "27600-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-41.9752, -20.9313]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Varre-Sai",
+        "endereco": "Praça Padre Abaete Cordeiro, 16 - Centro",
+        "cidade": "Varre-Sai",
+        "estado": "Rio de Janeiro",
+        "cep": "28375-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-43.6627, -22.4038]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Vassouras",
+        "endereco": "Av. Octavio Gomes, 395 - Centro",
+        "cidade": "Vassouras",
+        "estado": "Rio de Janeiro",
+        "cep": "27700-000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-44.0940, -22.5225]
+      },
+      "properties": {
+        "nome": "Prefeitura Municipal de Volta Redonda",
+        "endereco": "Praça Savio Gama, 53 - Centro",
+        "cidade": "Volta Redonda",
+        "estado": "Rio de Janeiro",
+        "cep": "27215-620"
+      }
+    }
+  ]
+}
